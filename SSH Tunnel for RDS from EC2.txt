@@ -1,0 +1,19 @@
+Steps For Creating SSH Tunnel for RDS from EC2 Using Putty (Windows)
+
+Step 1:- Open Putty 
+
+Step 2:- Enter your EC2 Hostname Example "ec2-user@ec2-3-110-88-51.ap-south-1.compute.amazonaws.com"
+
+Step 3:- Go to SSH->Auth->Credentials-> Enter the .ppk(putty) in the field and Hit Enter
+
+Step 4:- Type Yum install mysql in EC2 instance shell
+
+Step 5:- mysql -h batch1-test-db.clinjkidooyp.ap-south-1.rds.amazonaws.com -u maspr17 -p
+
+after entering the above command it will ask for password.
+
+if it is refuse to connect even after entering the password 
+
+Go to EC2 Security Security Groups-> click on default->edit inbound rule-> select Mysql/Aurora->enter EC2 private ip which is 172.0.0.0 (refer the ec2 command line), Save with EC2 exit
+
+Again Try Step 5... Then you are good to go.
